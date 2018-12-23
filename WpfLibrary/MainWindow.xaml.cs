@@ -25,11 +25,5 @@ namespace WpfLibrary
         {
             InitializeComponent();
         }
-
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            WeatherData weatherData = await WeatherAPI.GetWeatherData(1850144);
-            MessageBox.Show(weatherData.city.name);
-        }
     }
 }
