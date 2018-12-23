@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Weather;
 
 namespace WpfLibrary
 {
@@ -23,6 +24,12 @@ namespace WpfLibrary
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WeatherData weatherData = await WeatherAPI.GetWeatherData(1850144);
+            MessageBox.Show(weatherData.city.name);
         }
     }
 }
