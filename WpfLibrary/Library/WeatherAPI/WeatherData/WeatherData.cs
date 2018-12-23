@@ -1,4 +1,4 @@
-﻿namespace Weather
+﻿namespace WeatherWPF
 {
     public class WeatherData
     {

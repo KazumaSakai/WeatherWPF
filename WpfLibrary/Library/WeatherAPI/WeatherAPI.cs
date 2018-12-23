@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using Newtonsoft.Json;
 
-namespace Weather
+namespace WeatherWPF
 {
     public static class WeatherAPI
     {
