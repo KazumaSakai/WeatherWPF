@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A05FDEB2-D34F-4F47-8470-ACF735BB2541}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WpfLibrary</RootNamespace>
-    <AssemblyName>WpfLibrary</AssemblyName>
+    <RootNamespace>WeatherWPF</RootNamespace>
+    <AssemblyName>WeatherWPF</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -59,8 +59,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModel\WeatherDataViewModel.cs" />
-    <Compile Include="View\WeatherDataView.xaml.cs">
+    <Compile Include="Library\WeatherAPI\Model\CityData\City.cs" />
+    <Compile Include="Library\WeatherAPI\Model\CityData\CityEnum.cs" />
+    <Compile Include="Library\WeatherAPI\Model\CityData\Country.cs" />
+    <Compile Include="Library\WeatherAPI\Model\WeatherInfo.cs" />
+    <Compile Include="Library\WeatherAPI\Model\WeatherData.cs" />
+    <Compile Include="Library\WeatherAPI\ViewModel\WeatherDataViewModel.cs" />
+    <Compile Include="Library\WeatherAPI\View\WeatherDataView.xaml.cs">
       <DependentUpon>WeatherDataView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -71,14 +76,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\WeatherAPI\WeatherAPI.cs" />
-    <Compile Include="Library\WeatherAPI\WeatherData\WeatherData.cs" />
+    <Compile Include="Library\WeatherAPI\Model\WeatherAPI.cs" />
+    <Compile Include="Library\WeatherAPI\Model\WeatherGetData.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\WeatherDataView.xaml">
+    <Page Include="Library\WeatherAPI\View\WeatherDataView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,6 +123,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\CityImages\Tokyo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

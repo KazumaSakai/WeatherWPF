@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace WeatherWPF
 {
@@ -49,9 +51,7 @@ namespace WeatherWPF
 
             this.WeatherDataList = new List<WeatherDataView>();
             WeatherDataList.Add(new WeatherDataView());
-            WeatherDataList.Add(new WeatherDataView());
-            WeatherDataList.Add(new WeatherDataView());
-            WeatherDataList.Add(new WeatherDataView());
+
         }
     }
 }

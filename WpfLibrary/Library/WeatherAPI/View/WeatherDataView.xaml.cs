@@ -24,7 +24,10 @@ namespace WeatherWPF
         {
             InitializeComponent();
 
-            DataContext = new WeatherDataViewModel();
+            this.Dispatcher.Invoke(async () =>
+            {
+                DataContext = new WeatherDataViewModel(await WeatherAPI.GetWeatherData(CityEnum.Tokyo));
+            });
         }
     }
 }

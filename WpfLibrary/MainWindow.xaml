@@ -8,8 +8,6 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid>
-        <ListBox ItemsSource="{Binding WeatherDataList}">
-        </ListBox>
-        <!-- <Label Content="{Binding User}" /> -->
+        <ListBox ItemsSource="{Binding WeatherDataList}" />
     </Grid>
 </Window>

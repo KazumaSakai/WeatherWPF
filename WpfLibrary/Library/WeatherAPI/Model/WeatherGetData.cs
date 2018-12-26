@@ -1,6 +1,6 @@
 ﻿namespace WeatherWPF
 {
-    public class WeatherData
+    public class WeatherGetData
     {
         public string cod { get; set; }
         public float message { get; set; }

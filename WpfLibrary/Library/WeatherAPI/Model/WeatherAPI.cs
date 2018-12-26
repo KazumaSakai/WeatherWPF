@@ -23,6 +23,10 @@ namespace WeatherWPF
             return url.ToString();
         }
 
+        public static async Task<WeatherData> GetWeatherData(CityEnum city)
+        {
+            return await GetWeatherData((int)city);
+        }
         public static async Task<WeatherData> GetWeatherData(int cityID)
         {
             string url = CreateURL(cityID);
@@ -34,7 +38,8 @@ namespace WeatherWPF
                 if (response.IsSuccessStatusCode)
                 {
                     string data = await response.Content.ReadAsStringAsync();
-                    resultData = JsonConvert.DeserializeObject<WeatherData>(data);
+                    WeatherGetData getData = JsonConvert.DeserializeObject<WeatherGetData>(data);
+                    resultData = new WeatherData(getData);
                 }
             }
 
