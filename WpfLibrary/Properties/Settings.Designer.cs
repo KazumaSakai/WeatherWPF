@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfLibrary.Properties
+namespace WeatherWPF.Properties
 {
 
 

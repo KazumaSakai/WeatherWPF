@@ -12,21 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WeatherWPF;
 
 namespace WeatherWPF
 {
     /// <summary>
-    /// MainWindow.xaml の相互作用ロジック
+    /// UserControl1.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WeatherDataView : UserControl
     {
-        public MainWindow()
+        public WeatherDataView()
         {
             InitializeComponent();
 
-            var viewModel = new ViewModel();
-            DataContext = viewModel;
+            DataContext = new WeatherDataViewModel();
         }
     }
 }
