@@ -17,6 +17,14 @@ namespace WeatherWPF
         public float latitude;
         public float longitude;
 
+        public string imagePath
+        {
+            get
+            {
+                return "/Library/WeatherAPI/Images/CityImages/Tokyo.png";
+            }
+        }
+
         public City(Country country, int id, string name, float latitude, float longitude)
         {
             this.country = country;

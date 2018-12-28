@@ -10,7 +10,7 @@ namespace WeatherWPF
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private WeatherData model;
+        public WeatherData model { get; set; }
 
         public string CityName
         {
@@ -19,36 +19,48 @@ namespace WeatherWPF
                 return model.city.name;
             }
         }
-        public string CityImage
+        public string CityImagePath
         {
             get
             {
-                return string.Format("/Resources/Images/CityImages/Tokyo.png");
+                return model.city.imagePath;
             }
         }
         public string WeatherIcon
         {
             get
             {
-                return string.Format("/Resources/Images/WeatherIcons/Sun.png");
+                return string.Format("/Library/WeatherAPI/Images/WeatherIcons/Sun.png");
             }
         }
         public string WeatherName
         {
             get
             {
-                return "晴れ";
+                return model.weatherInfoList[2].WeatherName;
             }
         }
-        public string Rain { get; set; }
         public string Humidity
         {
             get
             {
-                return string.Format("湿度 : {0}", model.weatherInfoList[0].Humidity);
+                return string.Format("湿度 : {0}%", model.weatherInfoList[2].Humidity);
             }
         }
-        public string WindSpeed { get; set; }
+        public string Temperature
+        {
+            get
+            {
+                return string.Format("気温 : {0}℃", (model.weatherInfoList[2].Temperature - 273.15f).ToString("0.00"));
+            }
+        }
+        public string Time
+        {
+            get
+            {
+                return model.weatherInfoList[2].Time.ToString("MM/dd hh:mm");
+            }
+        }
 
         public WeatherDataViewModel(WeatherData model)
         {
